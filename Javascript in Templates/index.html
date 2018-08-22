@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Listening to Events</title>
+</head>
+<body>
+  <!-- <div id="app">
+    <button v-on:click="increase(2, $event)">Click Me</button>
+    <button v-on:click="counter++">Click Me</button>
+    <p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
+    <p v-on:mousemove="updateCoordinates">
+      Coordinates: {{ x }} / {{ y }}
+      - <span v-on:mousemove.stop="">DEAD SPOT</span>
+    </p>
+    <input type="text" v-on:keyup.enter.space="alertMe">
+  </div> -->
+
+  <!-- Two Way Binding
+  <div id="app">
+    <input type="text" v-model="name">
+    <p>{{ name }}</p>
+  </div> -->
+
+<!-- <div id="app">
+  <button v-on:click="counter++">Increase</button>
+  <button v-on:click="counter--">Decrease</button>
+  <button v-on:click="secondCounter++">Increase Second</button>
+  <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+  <p>Result: {{ result() }} | {{ output }}</p>
+</div> -->
+
+<div id="app">
+  <button @click="changeLink">Click to Change Link</button>
+  <a :href="link">Link</a>
+</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
