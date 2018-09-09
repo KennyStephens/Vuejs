@@ -8,6 +8,12 @@
 </head>
 <body>
 <div id="app">
+    <div class="callout" v-show="showCallout">
+        <p>{{ showCalloutText }}</p>
+        <button class="no" @click="giveUp">No</button>
+        <button class="yes" @click="startGame">Yes</button>
+    </div>
+
     <section class="row">
         <div class="small-6 columns" :style="{textAlign: 'center'}">
             <img class="healing-hero" src="images/healing.gif" alt="">
@@ -18,6 +24,7 @@
                 <img class="monster" src="images/monster.gif" alt="">
         </div> 
     </section>
+    <section class="buttons" v-show="!showCallout">
     <section class="row">
         <div class="small-6 columns">
             <h1 class="text-center">YOU</h1>
@@ -67,6 +74,7 @@
             </ul>
         </div>
     </section>
+</section>
 </div>
 
 

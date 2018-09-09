@@ -109,3 +109,32 @@ button {
 .healing-monster {
     opacity: 0;
 }
+
+.callout {
+    background: #9bc1ff;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    width: 100%;
+}
+
+.callout p {
+    margin: 0;
+}
+
+
+.callout button:hover {
+    opacity: .9;
+    transform: scale(1.1);
+    transition: all .5;
+}
+
+.yes {
+    background: green;
+    color: white;
+}
+
+.no {
+    background: red;
+    color: white;
+}

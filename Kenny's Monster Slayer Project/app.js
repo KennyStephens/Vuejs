@@ -4,10 +4,15 @@ new Vue({
     playerHealth: 100,
     monsterHealth: 100,
     gameIsRunning: false,
-    turns: []
+    turns: [],
+    showCallout: false,
+    showCalloutText: ''
+    
   },
   methods: {
     startGame: function(){
+      this.showCallout = false;
+      TweenMax.to('body', .5, {backgroundColor: 'white'});
       const playerHealthbar = document.querySelector('.player-health').style.background = 'green';
       const monsterHealthbar = document.querySelector('.monster-health').style.background = 'green';
       this.gameIsRunning = true;
@@ -84,6 +89,8 @@ new Vue({
       this.monsterAttacks();
     },
     giveUp: function() {
+      this.showCallout = false;
+      TweenMax.to('body', .5, {backgroundColor: 'white'});
       this.gameIsRunning = false;
     },
     monsterAttacks: function() {
@@ -132,19 +139,16 @@ new Vue({
     },
     checkWin: function() {
       if (this.monsterHealth <= 0) {
-        if (confirm('You won! New Game?')) {
-          this.startGame();
-        } else {
-          this.gameIsRunning = false;
-        }
-        return true;
-      } else if (this.playerHealth <= 0){
-        if (confirm('You lost! New Game?')) {
-          this.startGame();
-        } else {
-          this.gameIsRunning = false;
-        }
-        return true;
+         this.showCallout = true;
+         TweenMax.fromTo('.callout', .5, {opacity:0}, {opacity:1});
+         TweenMax.to('body', .5, {backgroundColor: 'black'});
+          this.showCalloutText = 'You won! Would you like to battle again?';
+         
+      } else if(this.playerHealth <= 0){
+          this.showCallout = true;
+          TweenMax.fromTo('.callout', .5, {opacity:0}, {opacity:1});
+          TweenMax.to('body', .5, {backgroundColor: 'black'});
+          this.showCalloutText = 'You lost. Would you like to battle again?';
       }
       return false;
     }
