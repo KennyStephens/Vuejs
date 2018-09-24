@@ -45,7 +45,8 @@
       </v-btn>
     </v-toolbar>
     <v-content>
-      <HelloWorld/>
+      <HelloWorld msg="Kenny was Here"/>
+      <NewComponent />
     </v-content>
     <v-navigation-drawer
       temporary
@@ -71,11 +72,13 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import NewComponent from './components/NewComponent'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    NewComponent
   },
   data () {
     return {
