@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <v-app>
+    <v-app dark>
       <v-container>
         <app-header></app-header>
-        <hr>
         <div>
           <v-layout>
             <v-flex xs6>
@@ -21,10 +20,10 @@
 </template>
 
 <script>
-import appHeader from './components/Header.vue'
-import appServers from './components/Servers.vue'
-import appServerDetails from './components/ServerDetails'
-import appFooter from './components/Footer.vue'
+import appHeader from './components/AppHeader.vue'
+import appServers from './components/AppServers.vue'
+import appServerDetails from './components/AppServerDetails'
+import appFooter from './components/AppFooter.vue'
 
 export default {
   name: 'app',
