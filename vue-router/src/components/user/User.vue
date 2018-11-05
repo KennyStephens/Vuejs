@@ -2,22 +2,18 @@
     <div>
         <h1>The User Page</h1>
         <hr>
-        <p>Loaded ID: {{ id }}</p>
-        <button class="btn btn-primary" @click="navigateToHome">Go To Home</button>
+        <button @click="navigateToHome" class="btn btn-primary">Go to Home</button>
+        <hr>
+        <router-view></router-view>
     </div>
 
 </template>
 
 <script>
     export default {
-        data() {
-            return {
-                id: this.$route.params.id
-            }
-        },
         methods: {
             navigateToHome() {
-                this.$router.push('/');
+                this.$router.push({ name: 'home' });
             }
         }
     }
