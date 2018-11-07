@@ -45,7 +45,7 @@
       </v-btn>
     </v-toolbar>
     <v-content>
-      <HelloWorld msg="Kenny was Here"/>
+      
       <NewComponent />
     </v-content>
     <v-navigation-drawer
@@ -64,6 +64,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
+    <hello-world></hello-world>
     <v-footer :fixed="fixed" app>
       <span>&copy; 2017</span>
     </v-footer>
@@ -71,13 +72,11 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 import NewComponent from './components/NewComponent'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     NewComponent
   },
   data () {
